@@ -13,9 +13,14 @@ npm install --save arangochair
 ```es6
 const arangochair = require('arangochair');
 
-const no4 = new arangochair('http://127.0.0.1:8529/'); // ArangoDB node to monitor
+// ArangoDB node to monitor
+const no4 = new arangochair('http://127.0.0.1:8529/');
 
-const no4 = new arangochair('http://127.0.0.1:8529/myDb'); // ArangoDB node to monitor, with database name
+// ArangoDB node to monitor, with database name
+const no4 = new arangochair('http://127.0.0.1:8529/myDb');
+
+// ArangoDB node to monitor, with username, password and database name
+const no4 = new arangochair('http://myUsername:myPassword@127.0.0.1:8529/myDb'); 
 
 no4.subscribe({collection:'users'});
 no4.start();
